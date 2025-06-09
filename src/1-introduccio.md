@@ -1,11 +1,19 @@
 # 1. Introducció
 
-La principal funció d'una aplicació informàtica és la manipulació i transformació de dades. Aquestes dades poden representar coses molt diferents segons el context del programa: notes d'estudiants, una recopilació de temperatures, les dates d'un calendari, etc. Les possibilitats són il·limitades. Totes aquestes tasques de manipulació i transformació es duen a terme normalment mitjançant l'emmagatzematge de les dades en variables, dins de la memòria de l'ordinador, per la qual cosa es poden aplicar operacions, ja siga mitjançant operadors o la invocació de mètodes.
+La funció principal de qualsevol aplicació informàtica és la **manipulació i transformació de dades**. Aquestes dades poden representar conceptes molt diversos segons el context: notes d'estudiants, registres meteorològics, cites d'un calendari, etc. Les possibilitats són infinites. Per a dur a terme aquestes operacions, el programa sol emmagatzemar la informació en variables dins de la memòria i aplicar‐hi tant operadors bàsics com mètodes especialitzats.
 
-Desgraciadament, totes aquestes variables només tenen vigència mentre el programa s'està executant. Una vegada el programa finalitza, les dades que contenen desapareixen. Això no és problema per a programes que sempre tracten les mateixes dades, que poden prendre la forma de literals dins del programa, o quan el nombre de dades a tractar és xicotet i es pot preguntar a l'usuari. Ara bé, imagineu-vos haver d'introduir les notes de tots els estudiants cada vegada que s'executa el programa per a gestionar-les. No té cap sentit.
+El problema és que les variables només tenen **vigència** mentre l'aplicació s'executa: quan el programa finalitza, totes les dades es perden. Açò pot ser acceptable quan treballem amb dades literals o amb entrades interactives puntuals, però esdevé inviable si cada sessió haguérem de reintroduir, per exemple, les notes de centenars d'estudiants.
 
-Per tant, en alguns casos, apareix la necessitat de poder registrar les dades en algun suport de memòria externa perquè es mantinguen de manera persistent entre diferents execucions del programa, o fins i tot si s'apaga l'ordinador.
+Per tant, sovint cal **persistir** la informació en algun mitjà extern. de manera que es mantinga disponible entre diferents execucions o fins i tot després d'apagar l'ordinador.
 
-La manera més senzilla d'aconseguir aquest objectiu és emmagatzemar la informació aprofitant el sistema d'arxius que ofereix el sistema operatiu. Mitjançant aquest mecanisme, és possible tindre les dades en un format fàcil de manejar i independent del suport real, ja siga un suport magnètic com un disc dur, una memòria d'estat sòlid com un llapis de memòria USB, un suport òptic, cinta, etc.
+La forma més senzilla d'aconseguir-ho és aprofitar el **sistema d'arxius** del sistema operatiu. Gràcies a ell, podem escriure i llegir fitxers en formats senzills (text, CSV, JSON, XML…) o en formats binaris, sense preocupar‐nos del suport físic (disc dur, unitat USB, memòria externa, etc.).
 
-En aquesta unitat didàctica s'expliquen diferents classes de Java que ens permeten crear, llegir, escriure i eliminar fitxers i directoris, entre altres operacions. També s'introdueix la serialització d'objectes com a mecanisme de gran utilitat per a emmagatzemar objectes en fitxers i després recuperar-los en temps d'execució.
+A més del maneig de fitxers i directoris, un altre recurs molt útil és la **serialització d'objectes**, que permet convertir objectes de la memòria en una seqüència de bytes i tornar‐los a reconstruir més endavant. D'aquesta manera, podem guardar l'estat complet d'una instància i recuperar‐la de forma íntegra en una nova execució.
+
+En aquesta unitat didàctica veurem:
+
+- Operacions bàsiques sobre el sistema d'arxius: creació, lectura, escriptura i eliminació de fitxers i directoris.
+- Formats de dades textuals i binaris per a emmagatzemar informació.
+- Tècniques de serialització d'objectes per a fer persistència de l'estat de les nostres instàncies.
+
+Amb aquests mecanismes podrem dissenyar aplicacions que guarden i recuperen dades de manera eficient i segura, garantint la **persistència** i la **continuïtat** de la informació tractada.
