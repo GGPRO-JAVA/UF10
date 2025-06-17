@@ -109,7 +109,7 @@ Implementa un programa que cree la carpeta 'Diccionari' amb tants arxius com lle
 
 ## Exercici B6 - Cerca en PI
 
-Implementa un programa que demane a l'usuari un número de qualsevol longitud, com per exemple "1234", i li diga a l'usuari si aquest número apareix en el primer milió de decimals del número pi (estan en l'arxiu *pi-million.txt*). No està permés utilitzar cap llibreria ni classe ni mètode que realitze la cerca. Has d'implementar l'algorisme de cerca tu mateix.
+Implementa un programa que demane a l'usuari un número de qualsevol longitud, com per exemple "1234", i li diga a l'usuari si aquest número apareix en el primer milió de decimals del número pi (estan en l'arxiu *pi-million.txt*). No està permés utilitzar cap llibreria ni classe ni mètode que realitze la cerca. Has d'implementar l'algoritme de cerca tu mateix.
 
 ## Exercici B7 - Estadístiques
 
