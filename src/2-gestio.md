@@ -65,7 +65,7 @@ No obstant això, Java permet utilitzar la barra (`/`) en Windows sense probleme
 File f = new File("C:/Users/Documents/fitxer.txt");
 ```
 
-És important entendre que un objecte `File` representa una única ruta del sistema de fitxers. Per a operar amb diferents rutes caldrà crear i manipular diversos objectes. Per exemple, en el següent codi s’instancien tres objectes `File` diferents:
+És important entendre que un objecte `File` representa una única ruta del sistema de fitxers. Per a operar amb diferents rutes caldrà crear i manipular diversos objectes. Per exemple, en el següent codi s'instancien tres objectes `File` diferents:
 
 ```java
 File carpetaFotos = new File("C:/Fotos");
@@ -231,7 +231,7 @@ Normalment, els arxius incorporen en el seu nom una extensió (.txt, .jpg, .mp4,
 
 - **boolean isDirectory()** funciona com l'anterior però comprova si és una carpeta.
 
-Per exemple, el següent codi fa una sèrie de comprovacions sobre un conjunt de rutes. Per a poder provar-ho pots crear la carpeta "Temp" en l'arrel "C:". Dins, un arxiu anomenat "Document.txt" (pot estar buit) i una carpeta anomenada “Fotos”. Després de provar el programa pots eliminar algun element i tornar a provar per a veure la diferència.
+Per exemple, el següent codi fa una sèrie de comprovacions sobre un conjunt de rutes. Per a poder provar-ho pots crear la carpeta "Temp" en l'arrel "C:". Dins, un arxiu anomenat "Document.txt" (pot estar buit) i una carpeta anomenada "Fotos". Després de provar el programa pots eliminar algun element i tornar a provar per a veure la diferència.
 
 ```java
 public static void main(String[] args) {
@@ -258,7 +258,7 @@ El sistema de fitxers d'un sistema operatiu emmagatzema diversitat d'informació
 
 - **long lastModified()** retorna l'última data d'edició de l'element representat per aquesta ruta. El resultat es codifica en un únic número enter, el valor del qual és el nombre de mil·lisegons que han passat des de l'1 de gener de 1970.
 
-L'exemple següent mostra com funcionen aquests mètodes. Per a provar-los, crea l'arxiu “Document.txt" en la carpeta "C:\Temp". Primer deixa l'arxiu buit i executa el programa. Després, amb un editor de text, escriu qualsevol cosa, guarda els canvis i torna a executar el programa. Observa com el resultat és diferent. Com a curiositat, fixa't en l'ús de la classe `Date` per a poder mostrar la data en un format llegible.
+L'exemple següent mostra com funcionen aquests mètodes. Per a provar-los, crea l'arxiu "Document.txt" en la carpeta "C:\Temp". Primer deixa l'arxiu buit i executa el programa. Després, amb un editor de text, escriu qualsevol cosa, guarda els canvis i torna a executar el programa. Observa com el resultat és diferent. Com a curiositat, fixa't en l'ús de la classe `Date` per a poder mostrar la data en un format llegible.
 
 ::: tabs
 == Codi
@@ -306,11 +306,11 @@ Grandària de l'arxiu: 7
 
 El conjunt d'operacions més habituals en accedir a un sistema de fitxers d'un ordinador són les vinculades a la seva gestió directa: canviar de nom arxius, esborrar-los, copiar-los o moure'ls. Donat el nom d'una ruta, Java també permet realitzar aquestes accions.
 
-- **boolean mkdir()**: Permet crear la carpeta indicada que no ha d'existir en la ruta en el moment d'invocar el mètode. Per exemple, donada una instància `File` amb la ruta “C:/Fotos/Albania” que no existeix, crearà la carpeta “Albania” dins de “C:/Fotos”. Retorna `true` si s'ha creat correctament, en cas contrari retorna `false` (per exemple si la ruta és incorrecta, la carpeta ja existeix o l'usuari no té permisos d'escriptura).
+- **boolean mkdir()**: Permet crear la carpeta indicada que no ha d'existir en la ruta en el moment d'invocar el mètode. Per exemple, donada una instància `File` amb la ruta "C:/Fotos/Albania" que no existeix, crearà la carpeta "Albania" dins de "C:/Fotos". Retorna `true` si s'ha creat correctament, en cas contrari retorna `false` (per exemple si la ruta és incorrecta, la carpeta ja existeix o l'usuari no té permisos d'escriptura).
 
 - **boolean delete()**: Esborra l'arxiu o carpeta indicada en la ruta. Es podrà esborrar una carpeta sol si està buida. Retorna `true` o `false` segons si l'operació s'ha pogut dur a terme.
 
-- **boolean createNewFile()**: Crea un arxiu buit. Java ens obligarà a incloure la instrucció dins d’un context de captura d’excepcions per control intern de Java front a errors crítics.
+- **boolean createNewFile()**: Crea un arxiu buit. Java ens obligarà a incloure la instrucció dins d'un context de captura d'excepcions per control intern de Java front a errors crítics.
 
 Per provar l'exemple que es mostra a continuació, primer assegura't que en l'arrel de la unitat "C:" no hi ha cap carpeta anomenada "Temp" i executa el programa. Tot fallarà, ja que les rutes són incorrectes (no existeix "Temp"). Després, crea la carpeta "Temp" i en el seu interior crea un nou document anomenat "Document.txt" (pot estar buit). Executa el programa i veuràs que s'haurà creat una nova carpeta anomenada "Fotos". Si ho tornes a executar per tercera vegada, podràs comprovar que s'haurà esborrat.
 
@@ -351,7 +351,7 @@ Executant el codi:
 
 Des del punt de vista d'un sistema operatiu, l'operació de "moure" un arxiu o carpeta no és més que canviar el seu nom des de la seva ruta original fins a una nova ruta destí. Per a fer això també hi ha un mètode.
 
-- **boolean renameTo(File destí)**: El nom d'aquest mètode és enganyós ("canviar de nom", en anglès), ja que la seva funció real no és simplement canviar el nom d'un arxiu o carpeta, sinó canviar la ubicació completa. El mètode invoca l'objecte File amb la ruta d'origen (on es troba l'arxiu o carpeta), i se li dona com a argument un altre objecte File amb la ruta destí. Retorna true o false segons si l'operació s'ha pogut dur a terme correctament o no (la ruta origen i destinació són correctes, no existeix ja un arxiu amb aquest nom en el destí, etc.). S’ha de tenir en compte que, en el cas de carpetes, és possible moure-les encara que continguin arxius.
+- **boolean renameTo(File destí)**: El nom d'aquest mètode és enganyós ("canviar de nom", en anglès), ja que la seva funció real no és simplement canviar el nom d'un arxiu o carpeta, sinó canviar la ubicació completa. El mètode invoca l'objecte File amb la ruta d'origen (on es troba l'arxiu o carpeta), i se li dona com a argument un altre objecte File amb la ruta destí. Retorna true o false segons si l'operació s'ha pogut dur a terme correctament o no (la ruta origen i destinació són correctes, no existeix ja un arxiu amb aquest nom en el destí, etc.). S'ha de tenir en compte que, en el cas de carpetes, és possible moure-les encara que continguin arxius.
 
 Una vegada més, vegem un exemple. Dins de la carpeta "C:/Temp", crea una carpeta anomenada "Mitjana" i una altra anomenada "Fotos". Dins de la carpeta "Fotos", crea dos documents anomenats "Document.txt" i "Fotos.txt". Després d'executar el programa, observa com la carpeta "Fotos" s'ha mogut i ha canviat de nom, però manté en el seu interior l'arxiu "Fotos.txt". L'arxiu "Document.txt" s'ha mogut fins a la carpeta "Temp".
 
@@ -371,7 +371,7 @@ public static void main(String[] args) {
 
 Com ja s'ha comentat, aquest mètode també serveix, implícitament, per a canviar de nom arxius o carpetes. Si l'element final de les rutes origen i destinació són diferents, el nom de l'element, sigui arxiu o carpeta, canviarà. Per a simplement canviar de nom un element sense moure'l de lloc, simplement la seva ruta pare seguirà sent exactament la mateixa. El resultat és que l'element de la ruta origen "es mou" en la mateixa carpeta on està ara, però amb un nom diferent.
 
-Per exemple, si utilitzem "C:/Treballs/Doc.txt" com a ruta origen i "C:/Treballs/File.txt" com a ruta destí, l'arxiu “Doc.txt” canviarà de nom a “File.txt” però romandrà en la mateixa carpeta “C:/Treballs”.
+Per exemple, si utilitzem "C:/Treballs/Doc.txt" com a ruta origen i "C:/Treballs/File.txt" com a ruta destí, l'arxiu "Doc.txt" canviarà de nom a "File.txt" però romandrà en la mateixa carpeta "C:/Treballs".
 
 ### 2.3.5. Llistat d'arxius
 
